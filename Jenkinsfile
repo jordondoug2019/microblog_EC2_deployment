@@ -9,7 +9,7 @@ pipeline {
                 pip install pip --upgrade
                 pip install -r requirements.txt
 		pip install gunicorn pymysql cryptography
-		export FLASK_APP=microblo.py
+		export FLASK_APP=microblog.py
                 '''
             }
         }
@@ -47,7 +47,8 @@ pipeline {
       stage ('Deploy') {
             steps {
                 sh '''#!/bin/bash
-                <enter your code here>
+                source venv/bin/activate
+		eb create microblog_EC2_deployment --single
                 '''
             }
         }
