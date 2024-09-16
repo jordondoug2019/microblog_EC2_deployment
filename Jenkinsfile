@@ -8,6 +8,8 @@ pipeline {
                 source venv/bin/activate
                 pip install pip --upgrade
                 pip install -r requirements.txt
+		pip install gunicorn pymysql cryptography
+		export FLASK_APP=microblo.py
                 '''
             }
         }
