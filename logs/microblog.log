@@ -24,3 +24,6 @@
 2024-09-16 18:10:12,830 INFO: Microblog startup [in /home/ubuntu/microblog_EC2_deployment/app/__init__.py:94]
 2024-09-16 18:10:12,836 INFO: Microblog startup [in /home/ubuntu/microblog_EC2_deployment/app/__init__.py:94]
 2024-09-16 18:10:12,840 INFO: Microblog startup [in /home/ubuntu/microblog_EC2_deployment/app/__init__.py:94]
+2024-09-18 03:17:24,558 INFO: Microblog startup [in /home/ubuntu/microblog_EC2_deployment/app/__init__.py:94]
+2024-09-18 03:20:35,340 INFO: Microblog startup [in /home/ubuntu/microblog_EC2_deployment/app/__init__.py:94]
+2024-09-18 03:21:21,940 INFO: Microblog startup [in /home/ubuntu/microblog_EC2_deployment/app/__init__.py:94]
