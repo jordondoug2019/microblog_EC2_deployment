@@ -48,7 +48,8 @@ pipeline {
             steps {
                 sh '''#!/bin/bash
                 source venv/bin/activate
-		eb create microblog_EC2_deployment --single
+		export FLASK_APP=microblog.py
+		gunicorn -b :5000 -w 4 microblog:app
                 '''
             }
         }
