@@ -49,8 +49,29 @@ pipeline {
       stage ('Deploy') {
             steps {
                 sh '''#!/bin/bash
-                source venv/bin/activate
-		gunicorn -b :5000 -w 4 microblog:app
+                set -x  # Enable command echoing for debugging
+                
+                echo "Attempting to restart microblog service..."
+                if sudo /bin/systemctl restart microblog; then
+                    echo "Microblog service restarted successfully"
+                else
+                    echo "Failed to restart microblog service"
+                    sudo /bin/systemctl status microblog || true
+                    exit 1
+                fi
+                
+                echo "Waiting for service to stabilize..."
+                sleep 10
+                
+                echo "Checking service status..."
+                if sudo /bin/systemctl is-active microblog; then
+                    echo "Microblog service is active"
+                    sudo /bin/systemctl status microblog || true
+                else
+                    echo "Microblog service failed to start"
+                    sudo /bin/systemctl status microblog || true
+                    exit 1
+                fi
                 '''
             }
         }
