@@ -13,10 +13,10 @@ The purpose of this workload is to provision and deploy our own Infrastructure.
    2. Install Jenkins on server
 
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
-  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
 echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
-  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
-  /etc/apt/sources.list.d/jenkins.list > /dev/null
+https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+/etc/apt/sources.list.d/jenkins.list > /dev/null
 sudo apt-get update
 sudo apt-get install jenkins
 
@@ -55,14 +55,14 @@ sudo apt nginx
       3. sudo systemctl status nginx
 Nginx should be active before moving on to the next step. 
 
-3\. Activate virtual environment
+3. Activate virtual environment
 
 1. cd into the directory that you cloned it should be “microblog\_EC2\_deployment”  
 2. To activate the virtual environment, run the following command:   
    1. python3.9 \-m venv venv  
    2. source venv/bin/activate
 
-4\. Install packages and dependencies 
+4. Install packages and dependencies 
 
 1. pip install \-r requirements.txt  
 2. pip install gunicorn pymysql cryptography
@@ -102,7 +102,8 @@ Automating Pipeline
 		flask translate compile  
 		flask db upgrade
 
-3. Create a python script called test\_app.py to run a unit test of the application source code. IMPORTANT: Put the script in a directory called "tests/unit/" of the GitHub repository  
+3. Create a python script called test\_app.py to run a unit test of the application source code. IMPORTANT: Put the script in a directory called "tests/unit/" of the GitHub repository
+    
 4. Write unit test:  
    1. Add the following imports:  
         
